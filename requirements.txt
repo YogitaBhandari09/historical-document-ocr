@@ -1,1 +1,7 @@
-
+numpy
+opencv-python
+matplotlib
+Pillow
+pandas
+python-dotenv
+torch
