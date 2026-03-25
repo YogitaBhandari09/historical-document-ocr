@@ -2,6 +2,9 @@
 
 A proposal-oriented baseline for historical document OCR using a CRNN backbone, CTC loss, decoding heuristics, and optional LLM-based post-processing.
 
+## Quick Summary
+An end-to-end OCR pipeline for historical Spanish documents using CRNN + CTC + beam search + Gemini LLM correction.
+
 ## Project Vision
 The long-term goal of this project is to build a robust OCR pipeline for historical documents that can serve as a foundation for research, archival digitization, and downstream text analysis. Historical material is especially difficult to recognize automatically because it combines noisy scans, degraded typography, irregular layouts, and limited aligned ground-truth transcriptions.
 
@@ -140,6 +143,23 @@ Baseline run captured in the notebook:
 | 10 | 2.3233 | 2.3682 |
 
 Best validation loss: `2.3468`
+
+## Key Results
+- Training Loss decreased from **2.7103 → 2.3233** over 10 epochs
+- Best Validation Loss achieved: **2.3468**
+- Character Error Rate (CER) ranges between **0.70 – 0.90** across samples
+- Beam search improves decoding consistency compared to greedy decoding
+- Lexicon constraint produces valid words (e.g., "rey")
+- LLM post-processing improves readability but does not replace OCR learning
+
+**Important Note:**
+These results are based on weak labels (filename-based supervision), so they validate pipeline correctness rather than true OCR accuracy.
+
+### Observations
+- The model successfully learns sequence patterns despite weak supervision
+- High CER is expected due to lack of ground-truth aligned labels
+- Decoding strategies (beam + lexicon) significantly improve output structure
+- LLM acts as a refinement layer rather than a primary recognition system
 
 ## Prediction Examples
 Representative outputs from the current weak-label baseline:
