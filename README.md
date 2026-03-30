@@ -242,5 +242,3 @@ GEMINI_API_KEY=your-key-here
 ## Expected Next Milestone
 The most important next milestone is to replace weak labels with verified transcriptions and re-evaluate the current architecture honestly. That change will do more for project quality than adding more heuristic post-processing on top of weak supervision.
 
-## Project Status
-This repository is now in a strong baseline state for continued development. It reads more like a serious proposal-backed engineering project, but its strongest future gains will come from better supervision, better benchmarking, and a clearer research protocol.
